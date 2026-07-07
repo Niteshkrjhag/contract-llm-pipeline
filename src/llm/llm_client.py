@@ -73,7 +73,7 @@ def generate(prompt: str, model: str = "gpt-3.5-turbo", temperature: float = 0.0
                 return _generate_openai_compatible(clients["OpenRouter"], prompt, "google/gemma-4-26b-a4b-it:free", temperature)
             elif provider == "Ollama":
                 # Ollama Cloud model
-                return _generate_openai_compatible(clients["Ollama"], prompt, "gemma3:27b", temperature)
+                return _generate_openai_compatible(clients["Ollama"], prompt, "gpt-oss:120b", temperature)
                 
         except Exception as e:
             logger.error(f"Error calling {provider} API: {e}")
