@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract AI Pipeline</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <div class="ai-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Generative AI Agent
+            </div>
+            <h1>Legal Contract <span>Intelligence</span></h1>
+            <p>Upload a PDF contract. Our AI instantly extracts, analyzes, and categorizes crucial clauses with extreme precision.</p>
+        </header>
+
+        <!-- Upload Panel -->
+        <section class="upload-section glass-panel" id="upload-panel">
+            <div class="drop-zone" id="drop-zone">
+                <div class="icon">
+                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a855f7" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Upload Contract PDF</h3>
+                <p>Drag and drop, or <span class="text-accent">click to browse</span></p>
+                <input type="file" id="file-input" accept="application/pdf" hidden>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <section class="loading-state glass-panel hidden" id="loading-state">
+            <div class="spinner-container">
+                <div class="spinner"></div>
+                <div class="spinner-glow"></div>
+            </div>
+            <h3>Analyzing Contract Architecture...</h3>
+            <p class="loading-subtitle">Semantic embeddings & LLM processing in progress</p>
+            <p class="text-accent mt-2" style="font-size: 0.95rem; font-weight: 500; opacity: 0.9;">⏳ This deep analysis involves multiple AI models and may take up to 1 minute to complete.</p>
+        </section>
+
+        <!-- Dashboard Split View -->
+        <section class="dashboard hidden" id="results-section">
+            <div class="dashboard-grid">
+                
+                <!-- Left Column: Executive Summary -->
+                <div class="glass-panel summary-panel">
+                    <div class="panel-header">
+                        <h2>Executive Summary</h2>
+                        <span class="badge-warning">AI Generated</span>
+                    </div>
+                    <div class="markdown-body" id="res-summary">
+                        <!-- Rendered Markdown goes here -->
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Deep Dive Tabs -->
+                <div class="glass-panel detail-panel">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="termination">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            Termination
+                        </button>
+                        <button class="tab-btn" data-tab="confidentiality">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Confidentiality
+                        </button>
+                        <button class="tab-btn" data-tab="liability">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Liability
+                        </button>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- Termination Content -->
+                        <div class="tab-pane active" id="tab-termination">
+                            <div class="markdown-body" id="res-termination"></div>
+                        </div>
+
+                        <!-- Confidentiality Content -->
+                        <div class="tab-pane hidden" id="tab-confidentiality">
+                            <div class="markdown-body" id="res-confidentiality"></div>
+                        </div>
+
+                        <!-- Liability Content -->
+                        <div class="tab-pane hidden" id="tab-liability">
+                            <div class="markdown-body" id="res-liability"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="action-footer">
+                <button class="btn-primary" onclick="location.reload()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    Analyze Another Document
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
