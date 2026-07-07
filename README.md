@@ -1,16 +1,31 @@
 ---
-title: Contract AI Pipeline
-emoji: 📜
-colorFrom: purple
-colorTo: indigo
+title: Legal Contract Intelligence AI
+emoji: 🏛️
+colorFrom: indigo
+colorTo: purple
 sdk: docker
+app_port: 7860
 pinned: false
 ---
 # 🏛️ Legal Contract Intelligence AI
 
+<p align="center">
+  <img src="assets/logo.png" alt="Legal Contract Intelligence Logo" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://huggingface.co/spaces/NiteshExcellingInAI/contract-llm-pipeline"><b>🚀 VIEW LIVE DEMO ON HUGGING FACE SPACES</b></a>
+</p>
+
 An end-to-end, locally-hostable AI pipeline that reads legal contracts (PDFs), semantically extracts crucial clauses (Termination, Confidentiality, Liability), and generates structured Executive Summaries using Large Language Models (LLMs).
 
 This project features a **dynamic multi-LLM fallback architecture** and a **stunning Glassmorphic Web UI**.
+
+---
+
+## 🧪 Test it Yourself!
+Don't have a legal contract handy? No problem! 
+Download our **[Sample Contract PDF](assets/Sample_Contract.pdf)**, open the **Live Demo** link above, and upload the file to see the AI in action instantly!
 
 ---
 
