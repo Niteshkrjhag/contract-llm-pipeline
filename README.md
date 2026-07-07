@@ -1,3 +1,11 @@
+---
+title: Contract AI Pipeline
+emoji: 📜
+colorFrom: purple
+colorTo: indigo
+sdk: docker
+pinned: false
+---
 # 🏛️ Legal Contract Intelligence AI
 
 An end-to-end, locally-hostable AI pipeline that reads legal contracts (PDFs), semantically extracts crucial clauses (Termination, Confidentiality, Liability), and generates structured Executive Summaries using Large Language Models (LLMs).

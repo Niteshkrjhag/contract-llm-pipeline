@@ -17,3 +17,4 @@ data/raw_contracts/*
 !data/raw_contracts/.gitkeep
 outputs/
 .DS_Store
+data/selected_contracts/
