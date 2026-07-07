@@ -10,7 +10,7 @@ pinned: false
 # 🏛️ Legal Contract Intelligence AI
 
 <p align="center">
-  <img src="assets/logo.png" alt="Legal Contract Intelligence Logo" width="100%">
+  <img width="768" height="184" alt="Legal Contract Intelligence Logo" src="https://github.com/user-attachments/assets/13a8fa4c-0a81-44d6-8bcc-e09f1b7e9880" />
 </p>
 
 <p align="center">
